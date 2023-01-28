@@ -1,6 +1,6 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
+// ignore_for_file: public_member_api_docs, sort_constructors_first, avoid_print, prefer_final_fields
 import 'package:mobx/mobx.dart';
-import 'package:mobx_imc/model/full_name.dart';
+import 'package:mobx_imc/example/model/full_name.dart';
 
 class ContadorController {
   var _counter = Observable<int>(0, name: "conuter observable");

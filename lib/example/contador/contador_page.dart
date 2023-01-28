@@ -1,6 +1,8 @@
+// ignore_for_file: avoid_print
+
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:mobx_imc/contador/contador_controller.dart';
+import 'package:mobx_imc/example/contador/contador_controller.dart';
 
 class ContadorPage extends StatelessWidget {
   const ContadorPage({Key? key}) : super(key: key);
@@ -11,7 +13,7 @@ class ContadorPage extends StatelessWidget {
     final controller = ContadorController();
     return Scaffold(
       appBar: AppBar(
-        title: Text("Contador Mobx"),
+        title: const Text("Contador Mobx"),
       ),
       body: Center(
         child: Column(

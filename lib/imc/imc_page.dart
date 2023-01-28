@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:currency_text_input_formatter/currency_text_input_formatter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
@@ -40,7 +38,9 @@ class _ImcPageState extends State<ImcPage> {
   @override
   void dispose() {
     super.dispose();
-    reactionDisposers.forEach((reactionDisposers) => reactionDisposers());
+    for (var reactionDisposers in reactionDisposers) {
+      reactionDisposers();
+    }
   }
 
   @override
@@ -79,6 +79,8 @@ class _ImcPageState extends State<ImcPage> {
                   validator: (String? value) {
                     if (value == null || value.isEmpty) {
                       return "Altura obrigatória";
+                    } else {
+                      return null;
                     }
                   },
                 ),
@@ -97,6 +99,8 @@ class _ImcPageState extends State<ImcPage> {
                   validator: (String? value) {
                     if (value == null || value.isEmpty) {
                       return "Peso obrigatório";
+                    } else {
+                      return null;
                     }
                   },
                 ),
@@ -115,7 +119,32 @@ class _ImcPageState extends State<ImcPage> {
                         controller.calcularImc(peso: peso, altura: altura);
                       }
                     },
-                    child: Text("Calcular Imc"))
+                    child: const Text("Calcular Imc")),
+                const SizedBox(height: 20),
+                const Text("Example test MobX"),
+                Wrap(
+                  alignment: WrapAlignment.spaceBetween,
+                  runSpacing: 15,
+                  spacing: 20,
+                  children: [
+                    ElevatedButton(
+                        onPressed: () =>
+                            Navigator.of(context).pushNamed("/observableList"),
+                        child: const Text("Observable List")),
+                    ElevatedButton(
+                        onPressed: () =>
+                            Navigator.of(context).pushNamed("/modelObservable"),
+                        child: const Text("Model Observable")),
+                    ElevatedButton(
+                        onPressed: () =>
+                            Navigator.of(context).pushNamed("/contador"),
+                        child: const Text("contador")),
+                    ElevatedButton(
+                        onPressed: () =>
+                            Navigator.of(context).pushNamed("/contadorCodegen"),
+                        child: const Text("Contador CodeGen")),
+                  ],
+                )
               ],
             ),
           ),

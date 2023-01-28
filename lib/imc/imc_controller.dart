@@ -1,3 +1,5 @@
+// ignore_for_file: unused_catch_clause
+
 import 'dart:math';
 
 import 'package:mobx/mobx.dart';
@@ -23,7 +25,7 @@ abstract class ImcControllerBase with Store {
     try {
       imc = 0;
       error = null;
-      await Future.delayed(Duration(seconds: 1));
+      await Future.delayed(const Duration(seconds: 1));
       imc = peso / pow(altura, 2);
 
       if (imc > 30) {

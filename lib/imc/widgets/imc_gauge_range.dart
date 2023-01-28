@@ -4,6 +4,7 @@ import 'package:syncfusion_flutter_gauges/gauges.dart';
 
 class ImcGaugeRange extends GaugeRange {
   ImcGaugeRange({
+    super.key,
     required Color color,
     required double start,
     required double end,

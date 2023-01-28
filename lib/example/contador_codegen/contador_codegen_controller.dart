@@ -1,5 +1,7 @@
+// ignore_for_file: library_private_types_in_public_api
+
 import 'package:mobx/mobx.dart';
-import 'package:mobx_imc/model/full_name.dart';
+import 'package:mobx_imc/example/model/full_name.dart';
 
 part 'contador_codegen_controller.g.dart';
 

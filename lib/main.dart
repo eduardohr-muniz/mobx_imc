@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:mobx_imc/contador/contador_page.dart';
-import 'package:mobx_imc/contador_codegen/contador_codegen_page.dart';
+import 'package:mobx_imc/example/contador/contador_page.dart';
+import 'package:mobx_imc/example/contador_codegen/contador_codegen_page.dart';
+import 'package:mobx_imc/example/observables/list/observable_list_page.dart';
+import 'package:mobx_imc/example/observables/model_obervable/model_obeservable_page.dart';
 import 'package:mobx_imc/imc/imc_page.dart';
 
 void main() {
@@ -18,7 +20,14 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
         primarySwatch: Colors.blue,
       ),
-      home: const ImcPage(),
+      initialRoute: "/imcPage",
+      routes: {
+        "/imcPage": (context) => const ImcPage(),
+        "/observableList": (context) => const ObservableListPage(),
+        "/modelObservable": (context) => const ModelObservablePage(),
+        "/contador": (context) => const ContadorPage(),
+        "/contadorCodegen": (context) => const ContadorCodegenPage(),
+      },
     );
   }
 }

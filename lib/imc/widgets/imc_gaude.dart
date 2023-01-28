@@ -5,7 +5,7 @@ import 'imc_gauge_range.dart';
 
 class ImcGauge extends StatelessWidget {
   final double imc;
-  ImcGauge({Key? key, required this.imc}) : super(key: key);
+  const ImcGauge({Key? key, required this.imc}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
